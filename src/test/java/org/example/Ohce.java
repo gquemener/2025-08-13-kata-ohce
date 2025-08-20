@@ -24,7 +24,7 @@ class Ohce {
     if (AFTERNOON.equals(clock.moment())) {
       console.printLn("> ¡Buenas tardes Pedro!");
     } else if (EVENING.equals(clock.moment())) {
-      console.printLn("> ¡Buenas tardes Pedro!");
+      console.printLn("> ¡Buenas noches Pedro!");
     } else {
       console.printLn("> ¡Buenos días Pedro!");
     }
