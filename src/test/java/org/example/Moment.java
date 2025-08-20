@@ -1,5 +1,5 @@
 package org.example;
 
 public enum Moment {
-  MORNING
+  AFTERNOON, MORNING, EVENING
 }
