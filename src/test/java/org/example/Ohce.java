@@ -8,6 +8,7 @@ class Ohce {
   private Console console;
   private Clock clock;
 
+  // TODO: remove constructor
   public Ohce(Console console) {
   }
 
@@ -16,13 +17,18 @@ class Ohce {
     this.clock = clock;
   }
 
+
+  // TODO: rename parameter
   public void start(String pedro) {
+    // TODO: extract message into a variable
     if (AFTERNOON.equals(clock.moment())) {
       console.printLn("> ¡Buenas tardes Pedro!");
     } else if (EVENING.equals(clock.moment())) {
-      console.printLn("> ¡Buenas noches Pedro!");
+      console.printLn("> ¡Buenas tardes Pedro!");
     } else {
       console.printLn("> ¡Buenos días Pedro!");
     }
+
+    // TODO: call console.printLn with message
   }
 }

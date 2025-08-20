@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -29,5 +30,16 @@ class OhceTest {
     ohce.start("Pedro");
     // then
     Mockito.verify(console).printLn("> ¡" + greeting + " Pedro!");
+  }
+
+  @Test
+  void name() {
+    // given
+    Mockito.when(clock.moment()).thenReturn(Moment.MORNING);
+    var ohce = new Ohce(console, clock);
+    // when
+    ohce.start("David");
+    // then
+    Mockito.verify(console).printLn("> ¡Buenos días David!");
   }
 }
