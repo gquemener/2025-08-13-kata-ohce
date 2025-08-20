@@ -33,13 +33,4 @@ class OhceFeature {
     assertThat(true).isEqualTo(false);
   }
 
-  private interface Console {
-    void printLn(String s);
-  }
-
-  private class Ohce {
-    public Ohce(Console console) {}
-
-    public void start(String pedro) {}
-  }
 }
