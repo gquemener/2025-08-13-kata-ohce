@@ -1,34 +1,21 @@
 package org.example;
 
-import static org.example.Moment.AFTERNOON;
-import static org.example.Moment.EVENING;
-
 class Ohce {
 
-  private Console console;
-  private Clock clock;
-
-  // TODO: remove constructor
-  public Ohce(Console console) {
-  }
+  final private Console console;
+  final private Clock clock;
 
   public Ohce(Console console, Clock clock) {
     this.console = console;
     this.clock = clock;
   }
 
-
-  // TODO: rename parameter
-  public void start(String pedro) {
-    // TODO: extract message into a variable
-    if (AFTERNOON.equals(clock.moment())) {
-      console.printLn("> ¡Buenas tardes Pedro!");
-    } else if (EVENING.equals(clock.moment())) {
-      console.printLn("> ¡Buenas noches Pedro!");
-    } else {
-      console.printLn("> ¡Buenos días Pedro!");
-    }
-
-    // TODO: call console.printLn with message
+  public void start(String name) {
+    final String template = switch (clock.moment()) {
+      case AFTERNOON -> "> ¡Buenas tardes %s!";
+      case MORNING -> "> ¡Buenos días %s!";
+      case EVENING -> "> ¡Buenas noches %s!";
+    };
+    console.printLn(template.formatted(name));
   }
 }

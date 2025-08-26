@@ -2,5 +2,5 @@ package org.example;
 
 public interface Clock {
 
-  Object moment();
+  Moment moment();
 }

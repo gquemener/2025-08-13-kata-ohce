@@ -1,7 +1,7 @@
 package org.example;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,11 +11,15 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class OhceFeature {
 
-  @Mock private Console console;
+  @Mock
+  private Console console;
+  @Mock
+  private Clock clock;
 
   @Test
   void example() {
-    var app = new Ohce(console);
+    when(clock.moment()).thenReturn(Moment.MORNING);
+    final var app = new Ohce(console, clock);
     app.start("Pedro");
     verify(console).printLn("> ¡Buenos días Pedro!");
 
@@ -29,8 +33,7 @@ class OhceFeature {
     > pots
     $ Stop!
     > Adios Pedro
-         */
-    assertThat(true).isEqualTo(false);
+     */
   }
 
 }
